@@ -1,0 +1,15 @@
+main {
+    background: #FFEB3B;
+    color: #1E1E1E;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	justify-content: center;
+	padding: 0 30px;
+	text-align: center;
+}
+
+main > .dpk {
+	font-size: 4em;
+	font-weight: 600;
+}
