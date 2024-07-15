@@ -1,6 +1,6 @@
 main {
-    background: #FFEB3B;
-    color: #1E1E1E;
+    background: #FDF0DD;
+    color: #fffefe;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
@@ -9,7 +9,27 @@ main {
 	text-align: center;
 }
 
-main > .dpk {
+main > .title {
 	font-size: 4em;
 	font-weight: 600;
+    font-family: 'Pixelify', sans-serif;
+}
+
+body {
+    background: repeating-linear-gradient(
+        45deg,
+        #FB4053,
+        #FB4053 10px,
+        /*#FDF0DD 10px,
+        #FDF0DD 20px,*/
+		#FEF7E5 10px,
+		#FEF7E5 20px
+    );
+
+
+}
+
+.title {
+    color: #2B4954;
+    text-shadow: 2px 2px #CDBA9E;
 }
