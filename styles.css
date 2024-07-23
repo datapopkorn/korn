@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
 main {
-    background: #FDF0DD;
-    color: #fffefe;
+	background: #FDF0DD;
+	color: #fffefe;
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
@@ -9,27 +12,149 @@ main {
 	text-align: center;
 }
 
-main > .title {
+main>.title {
 	font-size: 4em;
 	font-weight: 600;
-    font-family: 'Pixelify', sans-serif;
+	font-family: 'Pixelify', sans-serif;
+}
+
+main {
+	background-color: var(--light-background);
+	color: var(--light-text);
+	transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body {
-    background: repeating-linear-gradient(
-        45deg,
-        #FB4053,
-        #FB4053 10px,
-        /*#FDF0DD 10px,
-        #FDF0DD 20px,*/
-		#FEF7E5 10px,
-		#FEF7E5 20px
-    );
+	font-family: 'Roboto', sans-serif;
+	background: repeating-linear-gradient(45deg,
+			#FB4053,
+			rgb(251, 64, 83) 10px,
+			#FEF7E5 10px,
+			#FEF7E5 20px);
 
 
 }
 
+
 .title {
-    color: #2B4954;
-    text-shadow: 2px 2px #CDBA9E;
+	color: #2B4954;
+	text-shadow: 2px 2px #CDBA9E;
+}
+
+
+.timeline {
+	max-width: 600px;
+	margin: 0 auto;
+	padding-left: 50px;
+	position: relative;
+}
+
+/*
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    background-color: #2B4954;
+    top: 0;
+    bottom: 0;
+    left: 0;
+}
+*/
+.event {
+	color: #2B4954;
+	padding: 10px;
+	position: relative;
+	background-color: #FDF0DD;
+	margin: 20px 0;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+	display: flex;
+	align-items: center;
+}
+
+.event:hover {
+	background-color: rgba(0, 0, 0, 0.15);
+	/* slightly darker background on hover */
+	box-shadow: 0 2px 5px #000000;
+}
+
+.emoji {
+	font-size: 4em;
+	margin-right: 10px;
+}
+
+.date {
+	color: #333333;
+	font-weight: bold;
+	margin-right: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: url('calendar.svg') no-repeat center;
+	width: 128px;
+	height: 128px;
+}
+
+.day {
+	font-size: 2.5em;
+	margin-top: 30px;
+	/* Adjust this value as needed */
+}
+
+.month {
+	font-size: 1.0em;
+	margin-top: -5px;
+	/* Adjust this value as needed */
+}
+
+.description {
+	padding: 5px 0;
+	flex-grow: 1;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+
+:root {
+	--light-background: #FDF0DD;
+	--light-text: #2B4954;
+	--dark-background: #2B4954;
+	--dark-text: #FDF0DD;
+}
+
+body {
+	background-color: var(--light-background);
+	color: var(--light-text);
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode main {
+	background-color: var(--dark-background);
+	color: var(--dark-text);
+}
+
+.theme-switch {
+	display: flex;
+	justify-content: flex-end;
+	padding: 1em;
+	cursor: pointer;
+}
+
+.theme-switch .emoji {
+	font-size: 2em;
+}
+
+.theme-switch .moon {
+	display: none;
+}
+
+body.dark-mode .theme-switch .sun {
+	display: none;
+}
+
+body.dark-mode .theme-switch .moon {
+	display: inline;
 }
