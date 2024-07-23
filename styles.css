@@ -173,30 +173,30 @@ body.dark-mode .theme-switch .moon {
         margin-right: auto;
     }
 
-    .date {
-        width: 80px;
-        height: 80px;
-        display: flex; /* Add this */
-        justify-content: center; /* Center the icons horizontally */
-        align-items: center; /* Center the icons vertically */
+    .date, .description {
+        width: 100%; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .day {
         font-size: 1.5em;
-        margin-top: 0; /* Adjust this as needed */
+        margin-top: 0; 
     }
 
     .month {
         font-size: 0.7em;
-        margin-top: 0; /* Adjust this as needed */
+        margin-top: 0;
     }
 
     .description {
-		display: flex; /* Add this */
-        align-items: center; /* Add this */
-        justify-content: center; /* Add this */
         padding: 5px 0;
         text-align: center;
         font-size: 0.9em;
+    }
+
+	.emoji { 
+        font-size: 0.9em; 
     }
 }
