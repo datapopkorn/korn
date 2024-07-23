@@ -167,8 +167,8 @@ body.dark-mode .theme-switch .moon {
     .event {
         flex-direction: column;
         align-items: center;
-        margin: 10px 0; /* Add some vertical spacing between events */
-        width: 90%; /* Take up 90% of the width on small screens */
+        margin: 10px 0;
+        width: 90%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -176,21 +176,24 @@ body.dark-mode .theme-switch .moon {
     .date {
         width: 80px;
         height: 80px;
+        display: flex; /* Add this */
+        justify-content: center; /* Center the icons horizontally */
+        align-items: center; /* Center the icons vertically */
     }
 
     .day {
         font-size: 1.5em;
-        margin-top: 15px;
+        margin-top: 0; /* Adjust this as needed */
     }
 
     .month {
         font-size: 0.7em;
-        margin-top: -2px;
+        margin-top: 0; /* Adjust this as needed */
     }
 
     .description {
         padding: 5px 0;
         text-align: center;
-		font-size: 0.9em; /* Reduce the font size of the description */
+        font-size: 0.9em;
     }
 }
