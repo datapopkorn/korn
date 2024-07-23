@@ -158,3 +158,34 @@ body.dark-mode .theme-switch .sun {
 body.dark-mode .theme-switch .moon {
 	display: inline;
 }
+
+@media (max-width: 600px) {
+    .event {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .date {
+        width: 100px;
+        height: 100px;
+    }
+
+    .day {
+        font-size: 2em;
+        margin-top: 20px;
+    }
+
+    .month {
+        font-size: 0.8em;
+        margin-top: -3px;
+    }
+
+    .description {
+        padding: 10px 0;
+        text-align: center;
+    }
+}
+
+body {
+    overflow-x: hidden;
+}
