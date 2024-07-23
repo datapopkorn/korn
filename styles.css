@@ -192,6 +192,9 @@ body.dark-mode .theme-switch .moon {
     }
 
     .description {
+		display: flex; /* Add this */
+        align-items: center; /* Add this */
+        justify-content: center; /* Add this */
         padding: 5px 0;
         text-align: center;
         font-size: 0.9em;
