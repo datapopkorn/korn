@@ -10,6 +10,7 @@ main {
 	justify-content: center;
 	padding: 0 30px;
 	text-align: center;
+	overflow-x: hidden;
 }
 
 main>.title {
@@ -17,6 +18,8 @@ main>.title {
 	font-weight: 600;
 	font-family: 'Pixelify', sans-serif;
 }
+
+
 
 main {
 	background-color: var(--light-background);
@@ -43,10 +46,11 @@ body {
 
 
 .timeline {
-	max-width: 600px;
 	margin: 0 auto;
 	padding-left: 50px;
 	position: relative;
+	width: 100%;
+    max-width: 550px; /* Adjust this to the maximum width you want for larger screens */
 }
 
 /*
@@ -159,11 +163,14 @@ body.dark-mode .theme-switch .moon {
 	display: inline;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
     .event {
         flex-direction: column;
         align-items: center;
-		margin: 10px 0; /* Add some vertical spacing between events */
+        margin: 10px 0; /* Add some vertical spacing between events */
+        width: 90%; /* Take up 90% of the width on small screens */
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .date {
@@ -186,8 +193,4 @@ body.dark-mode .theme-switch .moon {
         text-align: center;
 		font-size: 0.9em; /* Reduce the font size of the description */
     }
-}
-
-body {
-    overflow-x: hidden;
 }
