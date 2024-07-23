@@ -50,7 +50,7 @@ body {
 	padding-left: 50px;
 	position: relative;
 	width: 100%;
-    max-width: 550px; /* Adjust this to the maximum width you want for larger screens */
+    max-width: 350px; /* Adjust this to the maximum width you want for larger screens */
 }
 
 /*
@@ -162,7 +162,7 @@ body.dark-mode .theme-switch .sun {
 body.dark-mode .theme-switch .moon {
 	display: inline;
 }
-
+/*
 @media (max-width: 600px) {
     .event {
         flex-direction: column;
@@ -200,3 +200,4 @@ body.dark-mode .theme-switch .moon {
         font-size: 0.9em; 
     }
 }
+*/
