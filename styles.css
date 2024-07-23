@@ -47,10 +47,10 @@ body {
 
 .timeline {
 	margin: 0 auto;
-	padding-left: 50px;
+	padding-left: 0px;
 	position: relative;
 	width: 100%;
-    max-width: 350px; /* Adjust this to the maximum width you want for larger screens */
+    max-width: 450px; /* Adjust this to the maximum width you want for larger screens */
 }
 
 /*
@@ -67,6 +67,7 @@ body {
 .event {
 	color: #2B4954;
 	padding: 10px;
+	padding-left: 0px;
 	position: relative;
 	background-color: #FDF0DD;
 	margin: 20px 0;
@@ -90,7 +91,7 @@ body {
 .date {
 	color: #333333;
 	font-weight: bold;
-	margin-right: 10px;
+	margin-right: 0px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
