@@ -1,0 +1,13 @@
+{
+    "uid": "12345",
+    "recipient": {
+        "type": "email",
+        "identity": "alice.smith@example.com"
+    },
+    "badge": "https://datapopkorn.com/badge-class",
+    "verify": {
+        "type": "hosted",
+        "url": "https://datapopkorn.com/assertions/alice-smith"
+    },
+    "issuedOn": "2023-01-01T00:00:00Z"
+}

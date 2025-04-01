@@ -1,0 +1,12 @@
+{
+  "@context": "https://w3id.org/openbadges/v3",
+  "type": "BadgeClass",
+  "id": "https://example.com/badges/badge-class.json",
+  "name": "Kreator",
+  "description": "Awarded to contributors of DataPopKorn as speakers or volunteers.",
+  "image": "https://example.com/badges/popcorn.png",
+  "issuer": "https://example.com/badges/issuer.json",
+  "criteria": {
+    "narrative": "Participated in DataPopKorn as a Kreator in March 2025."
+  }
+}

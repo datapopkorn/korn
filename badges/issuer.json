@@ -1,0 +1,10 @@
+{
+  "@context": "https://w3id.org/openbadges/v3",
+  "type": "Issuer",
+  "id": "https://datapopkorn.com/badges/issuer.json",
+  "name": "DataPopKorn",
+  "url": "https://datapopkorn.com",
+  "email": "badges@datapopkorn.com",
+  "description": "Organizers of the DataPopKorn event series.",
+  "image": "https://datapopkorn.com/badges/popcorn.png"
+}

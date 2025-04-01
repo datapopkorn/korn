@@ -1,0 +1,13 @@
+{
+    "uid": "67890",
+    "recipient": {
+        "type": "email",
+        "identity": "bob.johnson@example.com"
+    },
+    "badge": "https://datapopkorn.com/badge-class",
+    "verify": {
+        "type": "hosted",
+        "url": "https://datapopkorn.com/assertions/bob-johnson"
+    },
+    "issuedOn": "2023-01-01T00:00:00Z"
+}
