@@ -2,12 +2,12 @@
     "uid": "12345",
     "recipient": {
         "type": "email",
-        "identity": "alice.smith@example.com"
+        "identity": "a***@***.c**"
     },
     "badge": "https://datapopkorn.com/badge-class",
     "verify": {
         "type": "hosted",
-        "url": "https://datapopkorn.com/assertions/alice-smith"
+        "url": "https://datapopkorn.com/badge/9d83kfjw8k"
     },
     "issuedOn": "2023-01-01T00:00:00Z"
 }
