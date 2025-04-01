@@ -1,0 +1,13 @@
+{
+    "uid": "12345",
+    "recipient": {
+        "type": "email",
+        "identity": "a***@***.c**"
+    },
+    "badge": "https://datapopkorn.com/badges/bin/badge-class",
+    "verify": {
+        "type": "hosted",
+        "url": "https://datapopkorn.com/badges/a2384jf8a3"
+    },
+    "issuedOn": "2023-01-01T00:00:00Z"
+}
