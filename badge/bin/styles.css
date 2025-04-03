@@ -1,0 +1,17 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #fefefe;
+    padding: 2rem;
+  }
+  
+  .badge {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+  }
+  
+  .info {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
