@@ -5,9 +5,21 @@ body {
   padding: 2rem;
 }
 
+h1 {
+  font-weight: bold;
+}
+
+.badge-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
 .badge {
   width: 100%;
-  max-width: 512px;
+  max-width: 150px;
   height: auto;
   cursor: pointer;
 }
