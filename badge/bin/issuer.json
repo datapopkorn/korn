@@ -2,9 +2,9 @@
   "@context": "https://w3id.org/openbadges/v3",
   "type": "Issuer",
   "id": "https://datapopkorn.com/badges/bin/issuer.json",
-  "name": "DataPopKorn",
+  "name": "DataPopkorn",
   "url": "https://datapopkorn.com",
-  "email": "badges@datapopkorn.com",
-  "description": "Organizers of the DataPopKorn event series.",
+  "email": "mikeybronowski@gmail.com",
+  "description": "Chief Popkorn Office",
   "image": "https://datapopkorn.com/badges/bin/popcorn.png"
 }

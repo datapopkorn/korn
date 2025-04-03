@@ -1,0 +1,13 @@
+{
+    "uid": "06bd9c0ada36d4489d558a5ae9fdf8cc47217191153f63753980579b0214b6bf",
+    "recipient": {
+        "type": "name",
+        "identity": "Siddhartha Parimi Parimi"
+    },
+    "badge": "https://datapopkorn.com/badge-class",
+    "verify": {
+        "type": "hosted",
+        "url": "https://datapopkorn.com/badge/0c3fa40dc7f5e383574b9bc4d034c4764231a434d70403d8160d61cb718deb5e"
+    },
+    "issuedOn": "2025-03-24T00:00:00Z"
+}
