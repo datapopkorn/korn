@@ -1,13 +1,12 @@
 body {
     font-family: sans-serif;
     text-align: center;
-    background-color: #fefefe;
+    background-color: #fcf8eb;
     padding: 2rem;
   }
   
   .badge {
     width: 100%;
-    max-width: 250px;
     height: auto;
   }
   
