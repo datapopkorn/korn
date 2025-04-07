@@ -19,7 +19,7 @@ h1 {
 
 .badge {
   width: 100%;
-  max-width: 350px;
+  max-width: 150px;
   height: auto;
   cursor: pointer;
 }
