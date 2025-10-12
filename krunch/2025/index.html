@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>DataPopkorn Krunch 2025 — Session Archive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="../favicon-32x32_2.png">
+  <style>
+    :root{
+      --bg:#faf8f3; --card:#fff; --brand:#e08726; --text:#222; --muted:#666; --link:#2d68d2;
+      --btn:#111; --btnText:#fff; --btnDisabled:#999; --badge:#f3eadf;
+      --accent:#464EB8;
+    }
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);margin:0;padding:32px;color:var(--text);}
+    .wrap{max-width:1100px;margin:0 auto;}
+    header{display:flex;align-items:center;gap:16px;margin-bottom:18px;}
+    header img{width:64px;height:auto}
+    h1{margin:0;color:var(--brand);font-size:1.8rem;line-height:1.2}
+    .sub{color:var(--muted);margin:6px 0 24px}
+    .grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:16px}
+    @media(min-width:640px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:960px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .card{
+      background:var(--card);border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.07);
+      overflow:hidden;display:flex;flex-direction:column
+    }
+    .thumb{position:relative;background:#eee;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center}
+    .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+    .badge{
+      position:absolute;top:8px;left:8px;background:var(--badge);color:#7a5328;
+      font-size:.75rem;padding:4px 8px;border-radius:999px
+    }
+    .content{padding:14px 14px 16px}
+    .title{font-weight:bold;margin:0 0 6px}
+    .speaker{margin:0 0 6px}
+    .room{font-size:.85rem;color:var(--muted);margin:0 0 10px}
+    .actions{display:flex;gap:8px;flex-wrap:wrap}
+    .btn{
+      display:inline-block;padding:10px 14px;border-radius:8px;font-weight:bold;text-decoration:none;
+      background:var(--btn);color:var(--btnText);transition:transform .06s ease, opacity .2s ease
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.secondary{background:var(--accent)}
+    .btn[disabled], .btn.disabled{background:#e5e5e5;color:var(--btnDisabled);pointer-events:none}
+    footer{margin-top:28px;color:var(--muted);font-size:.9rem}
+    a.link{color:var(--link);text-decoration:none}
+    a.link:hover{text-decoration:underline}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img src="../krunch/datapopkorn-krunch.png" alt="DataPopkorn Krunch logo" />
+      <div>
+        <h1>DataPopkorn Krunch 2025 — Session Archive</h1>
+        <p class="sub">Recordings will appear here as they’re published on YouTube.</p>
+      </div>
+    </header>
+
+    <!-- Grid container -->
+    <div id="grid" class="grid" role="list"></div>
+
+    <footer>
+      Tip: as each video goes live, paste the YouTube ID below and it’ll auto-enable the button.  
+      You can also deep-link timestamps later (e.g. <code>?t=90</code>).
+    </footer>
+  </div>
+
+  <script>
+    /**
+     * HOW TO USE:
+     * 1) Add each speaker entry to SPEAKERS (name, title, room, optional thumbnail).
+     * 2) When the YouTube video is ready, set youtubeId (only the ID, not the whole URL).
+     *    Example full URL: https://www.youtube.com/watch?v=ABC123xyz -> youtubeId: "ABC123xyz"
+     * 3) Optional: provide a custom thumbnail (YouTube auto-thumbs will work too once live).
+     *
+     * If you prefer to keep this data in a separate JSON file, you can fetch it instead.
+     */
+
+    const SPEAKERS = [
+      // === EXAMPLES: replace with your real list (16 entries) ===
+      // You can copy names/titles from your agenda.
+      {
+        name: "Speaker A",
+        title: "Supercharge Your T-SQL Tips",
+        room: "Mikey",
+        youtubeId: "", // fill when live, e.g. "dQw4w9WgXcQ"
+        // optional custom image; if omitted, a neutral placeholder is used
+        thumbnail: ""
+      },
+      {
+        name: "Speaker B",
+        title: "Building Reliable ETL on a Budget",
+        room: "Mikey",
+        youtubeId: "",
+        thumbnail: ""
+      },
+      {
+        name: "Speaker C",
+        title: "Intro to KQL for DBAs",
+        room: "Yatzek",
+        youtubeId: "",
+        thumbnail: ""
+      },
+      // ... add the other 13 speakers here ...
+    ];
+
+    // Utility: safe text
+    const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+    // Build a card for each speaker
+    const grid = document.getElementById('grid');
+    SPEAKERS.forEach(sp => {
+      const hasYT = !!sp.youtubeId;
+      const ytUrl = hasYT ? `https://www.youtube.com/watch?v=${sp.youtubeId}` : null;
+
+      // Prefer provided thumbnail; otherwise attempt a YouTube thumb; else placeholder
+      let imgSrc = sp.thumbnail?.trim() || "";
+      if (!imgSrc && hasYT) {
+        imgSrc = `https://img.youtube.com/vi/${sp.youtubeId}/hqdefault.jpg`;
+      }
+      if (!imgSrc) {
+        imgSrc = "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(`
+          <svg xmlns='http://www.w3.org/2000/svg' width='640' height='360'>
+            <rect width='100%' height='100%' fill='#f1f1f1'/>
+            <text x='50%' y='50%' font-family='Arial, sans-serif' font-size='20' fill='#999' text-anchor='middle' dominant-baseline='middle'>
+              Recording coming soon
+            </text>
+          </svg>
+        `);
+      }
+
+      const card = document.createElement('article');
+      card.className = 'card';
+      card.setAttribute('role','listitem');
+
+      card.innerHTML = `
+        <div class="thumb">
+          <img src="${esc(imgSrc)}" alt="${esc(sp.title)} thumbnail" loading="lazy" />
+          <span class="badge">${esc(sp.room)} room</span>
+        </div>
+        <div class="content">
+          <h3 class="title">${esc(sp.title)}</h3>
+          <p class="speaker">${esc(sp.name)}</p>
+          <p class="room">Recorded at DataPopkorn Krunch 2025</p>
+          <div class="actions">
+            ${hasYT
+              ? `<a class="btn" href="${esc(ytUrl)}" target="_blank" rel="noopener">▶ Watch on YouTube</a>`
+              : `<a class="btn disabled" aria-disabled="true">⏳ Coming soon</a>`
+            }
+            <a class="btn secondary" href="https://www.youtube.com/@DataPopkorn" target="_blank" rel="noopener">Subscribe</a>
+          </div>
+        </div>
+      `;
+
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
