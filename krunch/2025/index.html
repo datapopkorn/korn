@@ -77,33 +77,116 @@
      * If you prefer to keep this data in a separate JSON file, you can fetch it instead.
      */
 
-    const SPEAKERS = [
-      // === EXAMPLES: replace with your real list (16 entries) ===
-      // You can copy names/titles from your agenda.
-      {
-        name: "Speaker A",
-        title: "Supercharge Your T-SQL Tips",
-        room: "Mikey",
-        youtubeId: "", // fill when live, e.g. "dQw4w9WgXcQ"
-        // optional custom image; if omitted, a neutral placeholder is used
-        thumbnail: ""
-      },
-      {
-        name: "Speaker B",
-        title: "Building Reliable ETL on a Budget",
-        room: "Mikey",
-        youtubeId: "",
-        thumbnail: ""
-      },
-      {
-        name: "Speaker C",
-        title: "Intro to KQL for DBAs",
-        room: "Yatzek",
-        youtubeId: "",
-        thumbnail: ""
-      },
-      // ... add the other 13 speakers here ...
-    ];
+  const SPEAKERS = [
+  // ==== Room Mikey ====
+  {
+    name: "Divya Chaudhary",
+    title: "Data Ethics in AI Pricing: Building Fair & Transparent Revenue Optimization Systems",
+    room: "Mikey",
+    youtubeId: "",
+    thumbnail: ""
+  },
+  {
+    name: "Simon Frazer",
+    title: "Mastering the Art of T-SQL Debugging",
+    room: "Mikey",
+    youtubeId: "",
+    thumbnail: ""
+  },
+  {
+    name: "Aleksandra Tarkowska",
+    title: "Intelligent Automation: Real-Time Integration for Seamless AI Communication",
+    room: "Mikey",
+    youtubeId: "",
+    thumbnail: ""
+  },
+  {
+    name: "Kseniia Ilchenko",
+    title: "Why AI fails at business decision-making",
+    room: "Mikey",
+    youtubeId: "",
+    thumbnail: ""
+  },
+  {
+    name: "Samir Makwana",
+    title: "AI-Powered Productivity for Project Managers: Exploring Copilot's Capabilities",
+    room: "Mikey",
+    youtubeId: "",
+    thumbnail: ""
+  },
+  {
+    name: "Maja Spanic Kezan",
+    title: "How to organize data so business users can understand and use it?",
+    room: "Mikey",
+    youtubeId: "",
+    thumbnail: ""
+  },
+  {
+    name: "Mikael Dewabrata",
+    title: "Building Your Data Community - Start From Social Media",
+    room: "Mikey",
+    youtubeId: "",
+    thumbnail: ""
+  },
+
+  // ==== Room Yatzek ====
+  {
+    name: "Rajendra Ongole",
+    title: "Unified Modeling with Microsoft Fabric Semantic Layer",
+    room: "Yatzek",
+    youtubeId: "",
+    thumbnail: ""
+  },
+  {
+    name: "Vahid Doustimajd",
+    title: "Refresh your Power BI semantic Model using Power Automate",
+    room: "Yatzek",
+    youtubeId: "",
+    thumbnail: ""
+  },
+  {
+    name: "Marco Russo",
+    title: "Power BI Performance Analyzer crash course",
+    room: "Yatzek",
+    youtubeId: "",
+    thumbnail: ""
+  },
+  {
+    name: "Juliana Smith",
+    title: "Accessibility Considerations in Power BI: Designing for Everyone",
+    room: "Yatzek",
+    youtubeId: "",
+    thumbnail: ""
+  },
+  {
+    name: "Paula García Esteban",
+    title: "Design Systems for Power BI: Transforming Dashboard Development",
+    room: "Yatzek",
+    youtubeId: "",
+    thumbnail: ""
+  },
+  {
+    name: "Marjolein Opsteegh",
+    title: "How to get started with the (new) Card Visual",
+    room: "Yatzek",
+    youtubeId: "",
+    thumbnail: ""
+  },
+  {
+    name: "Ville Gullstrand",
+    title: "4 tricks that will make you a Power BI Hero!",
+    room: "Yatzek",
+    youtubeId: "",
+    thumbnail: ""
+  },
+  {
+    name: "Javier Villegas",
+    title: "SQL Supercharged: Azure, Fabric & Copilot in Action",
+    room: "Yatzek",
+    youtubeId: "",
+    thumbnail: ""
+  }
+];
 
     // Utility: safe text
     const esc = (s) => String(s ?? "").replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
