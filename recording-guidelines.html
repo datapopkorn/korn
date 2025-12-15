@@ -212,6 +212,29 @@
             color: #2c3e50;
         }
 
+        /* New styles for upload step images */
+        .upload-steps {
+            margin-top: 30px;
+        }
+
+        .upload-steps .step {
+            margin-bottom: 18px;
+        }
+
+        .upload-steps .step-img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            display: block;
+        }
+
+        .upload-steps .figcaption {
+            font-size: 0.95em;
+            color: #6c757d;
+            margin-top: 8px;
+        }
+
         @media print {
             body {
                 background: white;
@@ -544,6 +567,36 @@
         <div class="tip">
             <p>💡 <strong>Pro tip:</strong> If you're new to recording, start with a 60-second session. It's easier to manage and a great way to get comfortable with the format!</p>
             <p>🎬 <strong>Good luck, and happy recording!</strong></p>
+        </div>
+
+        <!-- New upload step images section -->
+        <div class="upload-steps">
+            <h2>📎 Dropbox Upload Steps</h2>
+
+            <div class="step">
+                <figure>
+                    <img src="img/dpk-dropbox.png" alt="Click the Dropbox file request link" class="step-img">
+                    <figcaption class="figcaption">1) Click the Dropbox File Request link to open the upload form.</figcaption>
+                </figure>
+            </div>
+
+            <div class="step">
+                <figure>
+                    <img src="img/dpk-dropbox2.png" alt="Add the file and fill in name and email address" class="step-img">
+                    <figcaption class="figcaption">2) Add your file, then fill in your name and email address on the Dropbox form.</figcaption>
+                </figure>
+            </div>
+
+            <div class="step">
+                <figure>
+                    <img src="img/dpk-dropbox3.png" alt="You will see 'Finished uploading'" class="step-img">
+                    <figcaption class="figcaption">3) After upload completes you should see a confirmation like "Finished uploading".</figcaption>
+                </figure>
+            </div>
+
+            <div class="tip">
+                <p>If you don't see the confirmation, check your network connection and try again. Make sure the file name follows the required format (<code>FirstName_LastName_SessionTitle.mp4</code>).</p>
+            </div>
         </div>
 
         <button class="reset-btn" onclick="resetChecklist()">Reset All Checkboxes</button>
