@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataPopkorn - Recording Guidelines</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .intro {
+            background: #e8f4f8;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+            border-left: 4px solid #3498db;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .checklist {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 12px 0;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .checkbox-item:hover {
+            background: #e9ecef;
+        }
+
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 12px;
+            margin-top: 2px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .checkbox-item label {
+            cursor: pointer;
+            user-select: none;
+            flex: 1;
+        }
+
+        .checkbox-item input[type="checkbox"]:checked + label {
+            color: #27ae60;
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+
+        .section-note {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #ffc107;
+            margin: 20px 0;
+        }
+
+        .warning {
+            background: #f8d7da;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #dc3545;
+            margin: 20px 0;
+        }
+
+        .tip {
+            background: #d1ecf1;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #17a2b8;
+            margin: 20px 0;
+        }
+
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .tool-card {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #dee2e6;
+        }
+
+        .tool-card h4 {
+            color: #495057;
+            margin-bottom: 8px;
+        }
+
+        .tool-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .tool-card li {
+            padding: 4px 0;
+            color: #6c757d;
+        }
+
+        .tool-card li:before {
+            content: "• ";
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #e9ecef;
+            z-index: 1000;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .reset-btn {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 30px;
+            transition: background 0.3s;
+        }
+
+        .reset-btn:hover {
+            background: #c0392b;
+        }
+
+        .stats {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+            .reset-btn, .progress-bar {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="container">
+        <h1>📹 Recording Guidelines</h1>
+        <p class="subtitle">A quick guide to help you create great DataPopkorn sessions</p>
+
+        <div class="intro">
+            <p><strong>DataPopkorn is lightly curated</strong>, which means we don't edit recordings — we publish them as-is.
+            A quick self-check before recording really helps everyone.</p>
+        </div>
+
+        <div class="stats" id="stats">
+            Completed: <strong>0 / 0</strong> (0%)
+        </div>
+
+        <h2>🎯 Planning Your Session</h2>
+
+        <h3>✅ Core Requirements</h3>
+        <p><em>Please make sure all apply</em></p>
+        <div class="checklist">
+            <div class="checkbox-item">
+                <input type="checkbox" id="check1">
+                <label for="check1">The topic is data-focused</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check2">
+                <label for="check2">The session explains one clear idea</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check3">
+                <label for="check3">It fits the time limit (≤ 5 min or ≤ 60 sec)</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check4">
+                <label for="check4">You're comfortable with full public attribution</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check5">
+                <label for="check5">The content is appropriate for a public audience</label>
+            </div>
+        </div>
+
+        <h3>🎬 What Usually Makes Sessions Shine</h3>
+        <p><em>Aim for at least 2</em></p>
+        <div class="checklist">
+            <div class="checkbox-item">
+                <input type="checkbox" id="check6">
+                <label for="check6">A demo or walkthrough</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check7">
+                <label for="check7">A real-world example</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check8">
+                <label for="check8">You explaining things in your own words</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check9">
+                <label for="check9">Simple visual support (slides optional)</label>
+            </div>
+        </div>
+
+        <h3>🤖 About AI Sessions</h3>
+        <p><em>AI topics are very welcome when:</em></p>
+        <div class="checklist">
+            <div class="checkbox-item">
+                <input type="checkbox" id="check10">
+                <label for="check10">AI is shown, not just talked about</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check11">
+                <label for="check11">It's clearly used in data work</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check12">
+                <label for="check12">Viewers can see a real result or output</label>
+            </div>
+        </div>
+        <div class="section-note">
+            <strong>Note:</strong> General AI commentary without a demo is usually not a good fit.
+        </div>
+
+        <h2>🎥 Recording Best Practices</h2>
+
+        <h3>Before You Start</h3>
+        <div class="checklist">
+            <div class="checkbox-item">
+                <input type="checkbox" id="check13">
+                <label for="check13">Test your setup - Do a 30-second test recording to check audio and video quality</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check14">
+                <label for="check14">Choose a quiet location - Minimize background noise</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check15">
+                <label for="check15">Check your lighting - Face a light source, avoid backlighting</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check16">
+                <label for="check16">Frame yourself well - If you're on camera, position yourself in the center/side of frame</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check17">
+                <label for="check17">Close unnecessary apps - Reduce notifications and system sounds</label>
+            </div>
+        </div>
+
+        <h3>During Recording</h3>
+        <div class="checklist">
+            <div class="checkbox-item">
+                <input type="checkbox" id="check18">
+                <label for="check18">Start cleanly - Begin speaking right away, no long pauses</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check19">
+                <label for="check19">Stay focused - Cover one clear idea thoroughly</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check20">
+                <label for="check20">Show, don't just tell - Demos and examples are more engaging than slides alone</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check21">
+                <label for="check21">Speak clearly - Pace yourself, pause between key points</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check22">
+                <label for="check22">Watch the time - Keep track so you don't run over</label>
+            </div>
+        </div>
+
+        <h3>Recording Tips by Format</h3>
+        
+        <h4>Screen Recording:</h4>
+        <div class="checklist">
+            <div class="checkbox-item">
+                <input type="checkbox" id="check23">
+                <label for="check23">Use 1920×1080 (Full HD) resolution</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check24">
+                <label for="check24">Increase font sizes so text is readable</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check25">
+                <label for="check25">Hide personal information, bookmarks, notifications</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check26">
+                <label for="check26">Use a clean desktop/browser setup</label>
+            </div>
+        </div>
+
+        <h4>Camera Recording:</h4>
+        <div class="checklist">
+            <div class="checkbox-item">
+                <input type="checkbox" id="check27">
+                <label for="check27">Use landscape orientation (16:9)</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check28">
+                <label for="check28">Ensure good lighting on your face</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check29">
+                <label for="check29">Check your background is professional/clean</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check30">
+                <label for="check30">Position camera at eye level</label>
+            </div>
+        </div>
+
+        <h4>Hybrid (Screen + Camera):</h4>
+        <div class="checklist">
+            <div class="checkbox-item">
+                <input type="checkbox" id="check31">
+                <label for="check31">Screen should be the primary focus</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check32">
+                <label for="check32">Camera overlay should not hide important content</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check33">
+                <label for="check33">Maintain consistent audio levels</label>
+            </div>
+        </div>
+
+        <h2>📹 Technical Requirements</h2>
+
+        <h3>Must Have</h3>
+        <div class="checklist">
+            <div class="checkbox-item">
+                <input type="checkbox" id="check34">
+                <label for="check34"><strong>Format:</strong> MP4 (.mp4) file</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check35">
+                <label for="check35"><strong>Resolution:</strong> Full HD (1920×1080)</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check36">
+                <label for="check36"><strong>Audio:</strong> Clear throughout, no major background noise</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check37">
+                <label for="check37"><strong>Playback:</strong> Video plays correctly start to finish</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check38">
+                <label for="check38"><strong>Start:</strong> Recording begins immediately (no long intro or countdown)</label>
+            </div>
+        </div>
+
+        <h3>Recommended Settings</h3>
+        <div class="checklist">
+            <div class="checkbox-item">
+                <input type="checkbox" id="check39">
+                <label for="check39">Video codec: H.264</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check40">
+                <label for="check40">Audio codec: AAC</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check41">
+                <label for="check41">Frame rate: 30 fps (or 60 fps for smooth demos)</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check42">
+                <label for="check42">Bitrate: 8-10 Mbps for video, 128-192 kbps for audio</label>
+            </div>
+        </div>
+
+        <h3>Common Issues to Avoid</h3>
+        <div class="warning">
+            <strong>❌ Watch out for:</strong>
+            <ul>
+                <li>Low resolution (720p or below)</li>
+                <li>Muffled or distorted audio</li>
+                <li>Long silence at the beginning/end</li>
+                <li>Screen recording with tiny, unreadable text</li>
+                <li>Corrupted or incomplete video files</li>
+            </ul>
+        </div>
+
+        <h2>🛠️ Recommended Tools</h2>
+
+        <div class="tools-grid">
+            <div class="tool-card">
+                <h4>Free Options</h4>
+                <ul>
+                    <li>OBS Studio</li>
+                    <li>ShareX</li>
+                    <li>Windows Game Bar</li>
+                    <li>QuickTime Player</li>
+                    <li>Audacity</li>
+                </ul>
+            </div>
+            <div class="tool-card">
+                <h4>Paid Options</h4>
+                <ul>
+                    <li>Camtasia</li>
+                    <li>ScreenFlow</li>
+                    <li>Snagit</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>✅ Final Checklist Before Upload</h2>
+        <div class="checklist">
+            <div class="checkbox-item">
+                <input type="checkbox" id="check43">
+                <label for="check43">Video plays from start to finish without errors</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check44">
+                <label for="check44">Audio is clear and consistent</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check45">
+                <label for="check45">Resolution is 1920×1080</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check46">
+                <label for="check46">File is in .mp4 format</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check47">
+                <label for="check47">Duration is within time limit</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check48">
+                <label for="check48">No personal/sensitive information visible</label>
+            </div>
+            <div class="checkbox-item">
+                <input type="checkbox" id="check49">
+                <label for="check49">Content matches your session title and description</label>
+            </div>
+        </div>
+
+        <h2>📤 Ready to Submit?</h2>
+        <div class="tip">
+            <p>Once your recording meets all the requirements above, head to the submission form and upload via the official Dropbox File Request link.</p>
+            <p><strong>File name format:</strong><br>
+            <code>FirstName_LastName_SessionTitle.mp4</code></p>
+            <p><em>Example: John_Smith_IntroToPowerBI.mp4</em></p>
+        </div>
+
+        <div class="tip">
+            <p>💡 <strong>Pro tip:</strong> If you're new to recording, start with a 60-second session. It's easier to manage and a great way to get comfortable with the format!</p>
+            <p>🎬 <strong>Good luck, and happy recording!</strong></p>
+        </div>
+
+        <button class="reset-btn" onclick="resetChecklist()">Reset All Checkboxes</button>
+    </div>
+
+    <script>
+        // Save checkbox state to localStorage
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const progressFill = document.getElementById('progressFill');
+        const stats = document.getElementById('stats');
+
+        // Load saved state
+        checkboxes.forEach(checkbox => {
+            const saved = localStorage.getItem(checkbox.id);
+            if (saved === 'true') {
+                checkbox.checked = true;
+            }
+            
+            checkbox.addEventListener('change', function() {
+                localStorage.setItem(this.id, this.checked);
+                updateProgress();
+            });
+        });
+
+        function updateProgress() {
+            const total = checkboxes.length;
+            const checked = document.querySelectorAll('input[type="checkbox"]:checked').length;
+            const percentage = Math.round((checked / total) * 100);
+            
+            progressFill.style.width = percentage + '%';
+            stats.innerHTML = `Completed: <strong>${checked} / ${total}</strong> (${percentage}%)`;
+        }
+
+        function resetChecklist() {
+            if (confirm('Are you sure you want to reset all checkboxes?')) {
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                    localStorage.removeItem(checkbox.id);
+                });
+                updateProgress();
+            }
+        }
+
+        // Initial progress update
+        updateProgress();
+    </script>
+</body>
+</html>
